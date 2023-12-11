@@ -12,7 +12,7 @@ class UserController extends Controller
     public function index(){
 
         if(Auth::user()->name=='admin'){
-        $users = User::all();
+        $users = User::paginate(10);
         }
         else {  
             $users=[Auth::user()];
